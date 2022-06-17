@@ -7,3 +7,13 @@ def decode_char(char)
               '---..' => '8', '----.' => '9', '-----' => '0' }
   decoder[char]
 end
+
+def decode_word(word)
+  word.split(' ').map {|char| decode_char(char)}.join
+end
+
+def final_decode(message)
+  message.split('   ').map {|word| decode_word(word)}.join(' ')
+end
+
+final_decode('-- -.--   -. .- -- .')
