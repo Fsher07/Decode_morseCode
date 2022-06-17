@@ -11,3 +11,9 @@ end
 def decode_word(word)
   word.split.map { |char| decode_char(char) }.join
 end
+
+def final_decode(message)
+  message.split('   ').map { |word| decode_word(word) }.join(' ')
+end
+
+final_decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
